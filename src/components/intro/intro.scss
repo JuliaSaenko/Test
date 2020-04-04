@@ -1,0 +1,17 @@
+.intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.btn.intro__btn {
+  display: flex;
+  justify-content: center;
+  margin: 0 30px 0 0;
+  padding: 20px;
+  width: 220px;
+  font-weight: 700;
+  text-decoration: none;
+}

@@ -1,0 +1,33 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.courses-list {
+  @include simple-list;
+  @include desktop-container;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 51px 40px;
+}
+
+@media (max-width: $desktop-m-width) {
+  .courses-list {
+    @include simple-list;
+    @include desktop-m-container;
+    padding: 0 22px 40px;
+  }
+}
+
+@media (max-width: $tablet-l-width) {
+  .courses-list {
+    @include simple-list;
+    @include tablet-container;
+    padding: 0 48px 40px;
+  }
+}
+
+@media (max-width: $mobile-only) {
+  .courses-list {
+    @include mobile-container;
+    padding: 0 15px 40px;
+  }
+}

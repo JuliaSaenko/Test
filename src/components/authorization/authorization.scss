@@ -1,0 +1,235 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.authorization-main {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   background-color: $background-light;
+   height: 100vh;
+}
+
+.authorization {
+   margin: 0 auto;
+   padding: 32px 0;
+   max-width: 474px;
+   background-color: $white;
+   box-shadow: 0px 4px 16px rgba(51, 51, 51, 0.08), 0px 4px 4px rgba(51, 51, 51, 0.04);
+   border-radius: 8px;
+}
+
+.authorization  .authorization__title {
+   margin: 0 32px 14px;
+}
+
+.authorization__social {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   margin-bottom: 24px;
+   padding: 20px 32px 8px;
+   background-color: $background-light;
+}
+
+.authorization__text {
+   @include no-indent;
+   display: block;
+   margin-bottom: 12px;
+   font-family: 'Roboto', sans-serif;
+   font-size: 13px;
+   line-height: 20px;
+}
+
+.authorization__social-list {
+   @include simple-list;
+   display: flex;
+   flex-wrap: wrap;
+   margin: 0 0 12px auto;
+}
+
+.authorization__social-item {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 36px;
+   height: 36px;
+   border-radius: 50%;
+   background-color: $white;
+
+   &--fb {
+      padding-top: 4px;
+   }
+
+   &--google {
+      padding-top: 4px;
+   }
+
+   &:hover {
+      background-color: rgba($violet-light, 0.3);
+   }
+}
+
+.authorization__social-item:not(:last-of-type) {
+   margin-right: 8px;
+}
+
+.authorization__form {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 0 32px;
+}
+
+.authorization__row {
+   @include no-indent;
+   position: relative;
+   display: block;
+   margin-bottom: 40px;
+   width: 100%;
+}
+
+.authorization__label {
+   position: absolute;
+   pointer-events: none;
+   left: 16px;
+   top: 16px;
+   font-family: 'Roboto', sans-serif;
+   font-size: 16px;
+   line-height: 24px;
+   color: $gray;
+   transition: 0.2s ease all;
+}
+
+.authorization__input {
+   position: relative;
+   min-height: 56px;
+
+   &::placeholder {
+      color: $red;
+   }
+
+   &:focus {
+      padding-bottom: 6px;
+      &::placeholder {
+         opacity: 0;
+      }
+   }
+}
+
+.authorization__error {
+   position: absolute;
+   left: 16px;
+   bottom: -24px;
+   color: $red;
+}
+
+.authorization__input:focus ~ .authorization__label,
+.authorization__input:not(:focus):valid ~ .authorization__label {
+   position: absolute;
+   pointer-events: none;
+   top: 6px;
+   left: 16px;
+   font-size: 13px;
+   transition: 0.3s ease all;
+   opacity: 1;
+}
+
+.authorization__accept-text {
+   position: relative;
+   display: block;
+   margin-bottom: 32px;
+   padding-top: 10px;
+   padding-left: 52px;
+   font-family: 'Roboto', sans-serif;
+   font-size: 16px;
+   line-height: 24px;
+
+   &::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      display: block;
+      width: 24px;
+      height: 24px;
+      border: 1px solid $border-gray;
+      border-radius: 4px;
+      cursor: pointer;
+   }
+
+   &:hover::before {
+      background-color: $background-light;
+   }
+
+   &:focus::before {
+      border: 2px solid rgba(17, 17, 17, 0.48);
+   }
+
+   &:active::before {
+      border-color: $light-gray;
+   }
+
+   &--error {
+      color: $red;
+
+      &::before {
+         border-color: $error-red;
+      }
+   }
+}
+
+.authorization__checkbox {
+   outline: none;
+   border: none;
+   background-color: transparent;
+   &:checked + .authorization__accept-text::after {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: 22px;
+      display: block;
+      width: 11px;
+      height: 5px;
+      border-left: 2px solid $white;
+      border-bottom: 2px solid $white;
+      transform: rotate(-45deg);
+   }
+
+   &:checked + .authorization__accept-text::before {
+      background-color: $violet;
+      border-color: $violet;
+   }
+
+   &:checked + .authorization__accept-text:hover::before {
+      background-color: $violet-hover;
+      border-color: $violet-hover;
+   }
+
+   &:checked + .authorization__accept-text:focus::before {
+      border: 2px solid rgba(17, 17, 17, 0.48);
+   }
+
+   &:checked + .authorization__accept-text:disabled::before {
+      background-color: $violet-light;
+      border-color: $violet-light;
+   }
+
+}
+
+.authorization__link {
+   color: $violet;
+   text-decoration: none;
+   cursor: pointer;
+
+   &:hover {
+      color: $violet-active;
+   }
+}
+
+.authorization__btn {
+   margin-bottom: 18px;
+}
+
+.authorization__sing-in {
+   margin: 0 auto 15px;
+}

@@ -1,0 +1,30 @@
+@mixin simple-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin no-indent {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin mobile-container {
+  margin: 0 auto;
+  width: 320px;
+}
+
+@mixin tablet-container {
+  margin: 0 auto;
+  width: 768px;
+}
+
+@mixin desktop-m-container {
+  margin: 0 auto;
+  width: 1024px;
+}
+
+@mixin desktop-container {
+  margin: 0 auto;
+  width: 1366px;
+}
